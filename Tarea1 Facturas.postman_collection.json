@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "1aff4447-3688-47e5-8dd7-bae4cf473577",
+		"name": "Tarea1 Facturas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8792367"
+	},
+	"item": [
+		{
+			"name": "facturas",
+			"item": [
+				{
+					"name": "list all facturas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/factura/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"factura",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add factura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{        \r\n        \"fecha\": \"2023-10-04\",\r\n        \"cajero\": \"Francisco\",\r\n        \"lineas\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/factura/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"factura",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Factura By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/factura/getById/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"factura",
+								"getById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lineas Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/factura/lineaCount/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"factura",
+								"lineaCount",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/factura/totalFactura/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"factura",
+								"totalFactura",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lineas",
+			"item": [
+				{
+					"name": "get all lineas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/linea/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"linea",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update linea",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{                \r\n                \"producto\": \"Tronaditas\",\r\n                \"cantidad\": 1,\r\n                \"precioUnitario\": 100.0,\r\n                \"precioTotal\": 0.0\r\n            }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/linea/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"linea",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add linea",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {        \r\n        \"producto\": \"Tronaditas\",\r\n        \"cantidad\": 1,\r\n        \"precioUnitario\": 150.0,\r\n        \"factura\": {\r\n            \"id\": 2\r\n        }        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/linea/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"linea",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete linea",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/linea/borrar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"linea",
+								"borrar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
